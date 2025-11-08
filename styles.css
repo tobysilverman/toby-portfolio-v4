@@ -10,21 +10,21 @@
         /* Vertical lines */
         repeating-linear-gradient(
             to right,
-            #F0F6FF 0px,
-            #F0F6FF 1px,
+            rgba(232, 227, 219, 0.25) 0px,
+            rgba(232, 227, 219, 0.25) 1px,
             transparent 1px,
             transparent 16px
         ),
         /* Horizontal lines */
         repeating-linear-gradient(
             to bottom,
-            #F0F6FF 0px,
-            #F0F6FF 1px,
+            rgba(232, 227, 219, 0.25) 0px,
+            rgba(232, 227, 219, 0.25) 1px,
             transparent 1px,
             transparent 16px
         );
-    background-size: 16px 16px;
-    background-position: 0 0;
+    background-size: 16px 16px, 16px 16px;
+    background-position: 0 0, 0 0;
 }
 
 /* Corner bracket styles */
@@ -35,23 +35,23 @@
 }
 
 .corner-bracket-top-left {
-    border-top: 2px solid #0066FF;
-    border-left: 2px solid #0066FF;
+    border-top: 2px solid #1886E2;
+    border-left: 2px solid #1886E2;
 }
 
 .corner-bracket-top-right {
-    border-top: 2px solid #0066FF;
-    border-right: 2px solid #0066FF;
+    border-top: 2px solid #1886E2;
+    border-right: 2px solid #1886E2;
 }
 
 .corner-bracket-bottom-left {
-    border-bottom: 2px solid #0066FF;
-    border-left: 2px solid #0066FF;
+    border-bottom: 2px solid #1886E2;
+    border-left: 2px solid #1886E2;
 }
 
 .corner-bracket-bottom-right {
-    border-bottom: 2px solid #0066FF;
-    border-right: 2px solid #0066FF;
+    border-bottom: 2px solid #1886E2;
+    border-right: 2px solid #1886E2;
 }
 
 /* Profile picture dashed border with custom spacing */
