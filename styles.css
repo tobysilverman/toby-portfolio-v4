@@ -4,64 +4,11 @@
     box-sizing: border-box;
 }
 
-/* Responsive grid using background gradients */
-.grid-container {
-    background-image:
-        /* Vertical lines */
-        repeating-linear-gradient(
-            to right,
-            rgba(232, 227, 219, 0.25) 0px,
-            rgba(232, 227, 219, 0.25) 1px,
-            transparent 1px,
-            transparent 16px
-        ),
-        /* Horizontal lines */
-        repeating-linear-gradient(
-            to bottom,
-            rgba(232, 227, 219, 0.25) 0px,
-            rgba(232, 227, 219, 0.25) 1px,
-            transparent 1px,
-            transparent 16px
-        );
-    background-size: 16px 16px, 16px 16px;
-    background-position: 0 0, 0 0;
+.heading-squish {
+    font-variation-settings: 'opsz' 14, 'wdth' 100;
+    transition: font-variation-settings 0.3s ease;
 }
 
-/* Corner bracket styles */
-.corner-bracket {
-    width: 8px;
-    height: 8px;
-    position: relative;
-}
-
-.corner-bracket-top-left {
-    border-top: 2px solid #1886E2;
-    border-left: 2px solid #1886E2;
-}
-
-.corner-bracket-top-right {
-    border-top: 2px solid #1886E2;
-    border-right: 2px solid #1886E2;
-}
-
-.corner-bracket-bottom-left {
-    border-bottom: 2px solid #1886E2;
-    border-left: 2px solid #1886E2;
-}
-
-.corner-bracket-bottom-right {
-    border-bottom: 2px solid #1886E2;
-    border-right: 2px solid #1886E2;
-}
-
-/* Profile picture dashed border with custom spacing */
-.profile-pic-border {
-    background-image:
-        linear-gradient(to right, #b2d1ff 0%, #b2d1ff 50%, transparent 50%, transparent 100%),
-        linear-gradient(to bottom, #b2d1ff 0%, #b2d1ff 50%, transparent 50%, transparent 100%),
-        linear-gradient(to left, #b2d1ff 0%, #b2d1ff 50%, transparent 50%, transparent 100%),
-        linear-gradient(to top, #b2d1ff 0%, #b2d1ff 50%, transparent 50%, transparent 100%);
-    background-size: 16px 2px, 2px 16px, 16px 2px, 2px 16px;
-    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-    background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+.heading-squish:hover {
+    font-variation-settings: 'opsz' 14, 'wdth' 90;
 }
