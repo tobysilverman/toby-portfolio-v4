@@ -9,9 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=IBM+Plex+Sans:wght@400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@rive-app/canvas@latest"></script>
 </head>
 <body class="bg-[#FDFBF7] m-0 p-0">
-    <div class="w-screen h-screen relative bg-[#FDFBF7] overflow-hidden">
+    <!-- Splash Screen -->
+    <div id="splash" class="fixed inset-0 bg-[#FDFBF7] z-50 flex items-center justify-center transition-opacity duration-500">
+        <canvas id="rive-canvas" class="w-[500px] h-[500px]"></canvas>
+    </div>
+
+    <div id="main-content" class="w-screen h-screen relative bg-[#FDFBF7] overflow-hidden opacity-0 transition-opacity duration-500">
         <!-- Background area - responsive -->
         <div class="absolute left-[16px] right-[16px] top-[16px] bottom-[16px] md:left-[32px] md:right-[32px] md:top-[32px] md:bottom-[32px] lg:left-[56px] lg:right-[56px] lg:top-[57px] lg:bottom-[57px] 2xl:left-[80px] 2xl:right-[80px] 2xl:top-[80px] 2xl:bottom-[80px] bg-white"></div>
 
@@ -66,5 +72,34 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const splash = document.getElementById('splash');
+        const mainContent = document.getElementById('main-content');
+        const canvas = document.getElementById('rive-canvas');
+
+        // Handle retina displays
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = 500 * dpr;
+        canvas.height = 500 * dpr;
+
+        const r = new rive.Rive({
+            src: 'assets/animations/loader.riv',
+            canvas: canvas,
+            autoplay: true,
+            fit: rive.Fit.Contain,
+            onLoad: () => {
+                r.resizeDrawingSurfaceToCanvas();
+            },
+            onStop: () => {
+                // Animation completed
+                splash.style.opacity = '0';
+                mainContent.style.opacity = '1';
+                setTimeout(() => {
+                    splash.style.display = 'none';
+                }, 500);
+            }
+        });
+    </script>
 </body>
 </html>
