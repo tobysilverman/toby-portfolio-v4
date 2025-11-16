@@ -10,6 +10,9 @@
 For typography, colors, components, and patterns:
 → `/design-system/design_system.md`
 
+For bento grid layouts:
+→ `/bento-grid-best-practices.md`
+
 **Key principles:**
 - 95% neutral, 5% accent color rule
 - Bauhaus geometric simplicity
